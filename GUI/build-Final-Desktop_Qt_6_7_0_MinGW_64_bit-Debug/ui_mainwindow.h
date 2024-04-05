@@ -38,10 +38,10 @@ public:
         pushButton->setGeometry(QRect(710, 560, 83, 29));
         radioButton = new QRadioButton(centralwidget);
         radioButton->setObjectName("radioButton");
-        radioButton->setGeometry(QRect(300, 230, 238, 26));
+        radioButton->setGeometry(QRect(310, 200, 238, 26));
         radioButton_2 = new QRadioButton(centralwidget);
         radioButton_2->setObjectName("radioButton_2");
-        radioButton_2->setGeometry(QRect(300, 280, 240, 26));
+        radioButton_2->setGeometry(QRect(310, 260, 240, 26));
         MainWindow->setCentralWidget(centralwidget);
 
         retranslateUi(MainWindow);
@@ -51,7 +51,7 @@ public:
 
     void retranslateUi(QMainWindow *MainWindow)
     {
-        MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
+        MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "Sleep Inducer", nullptr));
         pushButton->setText(QCoreApplication::translate("MainWindow", "Next", nullptr));
         radioButton->setText(QCoreApplication::translate("MainWindow", "Click Here to see Inmate details", nullptr));
         radioButton_2->setText(QCoreApplication::translate("MainWindow", "Click Here to See Dorms Details", nullptr));

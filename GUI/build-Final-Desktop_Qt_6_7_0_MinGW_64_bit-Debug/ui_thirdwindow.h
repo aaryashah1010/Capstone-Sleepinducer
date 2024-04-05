@@ -13,7 +13,6 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QDialog>
 #include <QtWidgets/QHeaderView>
-#include <QtWidgets/QLabel>
 #include <QtWidgets/QTableView>
 
 QT_BEGIN_NAMESPACE
@@ -21,20 +20,16 @@ QT_BEGIN_NAMESPACE
 class Ui_ThirdWindow
 {
 public:
-    QLabel *label;
     QTableView *tableView;
 
     void setupUi(QDialog *ThirdWindow)
     {
         if (ThirdWindow->objectName().isEmpty())
             ThirdWindow->setObjectName("ThirdWindow");
-        ThirdWindow->resize(904, 491);
-        label = new QLabel(ThirdWindow);
-        label->setObjectName("label");
-        label->setGeometry(QRect(400, 60, 94, 20));
+        ThirdWindow->resize(621, 491);
         tableView = new QTableView(ThirdWindow);
         tableView->setObjectName("tableView");
-        tableView->setGeometry(QRect(5, 91, 891, 391));
+        tableView->setGeometry(QRect(0, 0, 621, 491));
 
         retranslateUi(ThirdWindow);
 
@@ -43,8 +38,7 @@ public:
 
     void retranslateUi(QDialog *ThirdWindow)
     {
-        ThirdWindow->setWindowTitle(QCoreApplication::translate("ThirdWindow", "Dialog", nullptr));
-        label->setText(QCoreApplication::translate("ThirdWindow", "Dorms Details", nullptr));
+        ThirdWindow->setWindowTitle(QCoreApplication::translate("ThirdWindow", "Dorms Details", nullptr));
     } // retranslateUi
 
 };

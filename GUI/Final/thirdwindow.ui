@@ -6,33 +6,20 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>904</width>
+    <width>621</width>
     <height>491</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>Dorms Details</string>
   </property>
-  <widget class="QLabel" name="label">
-   <property name="geometry">
-    <rect>
-     <x>400</x>
-     <y>60</y>
-     <width>94</width>
-     <height>20</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Dorms Details</string>
-   </property>
-  </widget>
   <widget class="QTableView" name="tableView">
    <property name="geometry">
     <rect>
-     <x>5</x>
-     <y>91</y>
-     <width>891</width>
-     <height>391</height>
+     <x>0</x>
+     <y>0</y>
+     <width>621</width>
+     <height>491</height>
     </rect>
    </property>
   </widget>

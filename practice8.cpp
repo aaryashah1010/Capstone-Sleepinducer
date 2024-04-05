@@ -62,11 +62,9 @@ void inputDataFromInmateFile(vector<InmateRecord>& inmatesList, const string& fi
     }
 
     fin.close();
-    cout << "Total inmates: " << inmatesList.size() << endl;
 }
 
 void displayInmates(const vector<InmateRecord>& inmatesList) {
-    cout << "Inmates record" << endl;
     for (const auto& inmate : inmatesList) {
         cout << endl << "Name: " << inmate.name << endl;
         cout << "Ear ID: " << inmate.ear_id << endl;
@@ -111,8 +109,7 @@ void inputDataFromDormFile(unordered_map<string, DormRecord>& dormitories, const
         dormitories[dorm.dorm_name] = dorm;
     }
 
-    fin.close();
-   
+    fin.close();  
 }
 
 void distributeInmatesToDorms(const vector<InmateRecord>& inmatesList, unordered_map<string, DormRecord>& dormitories) {
@@ -136,7 +133,6 @@ void distributeInmatesToDorms(const vector<InmateRecord>& inmatesList, unordered
 }
 
 void displayDormitories(const unordered_map<string, DormRecord>& dormitories) {
-    cout << "Dormitories record" << endl;
     int num = 0;
     int occupiedCount = 0;
     int vacantCount = 0;
@@ -181,7 +177,6 @@ void displayDormitories(const unordered_map<string, DormRecord>& dormitories) {
 
 void playMusicForInmate(const InmateRecord& inmate, int day) {
 
-   // cout << "Day " << day << ", ";
     cout << "Activating music channel of earpod id:"<<inmate.ear_id <<" for "<< inmate.name << " at " << inmate.daily_sleep[day - 1].sleep_time << endl;
 
     stringstream ss(inmate.daily_sleep[day - 1].sleep_time);
@@ -202,18 +197,14 @@ void playMusicForInmate(const InmateRecord& inmate, int day) {
         end_hour -= 24;
     }
 
-    //cout << "Day " << day << ", ";
     cout << "Deactivating music channel of earpod id: "<<inmate.ear_id<<" for "<< inmate.name << " at ";
 
-    // Adjust end time to match the same period (AM/PM) as start time
     if (am_pm == "PM") {
         end_hour += (end_hour == 12) ? 12 : 0;
     } else {
-        // If start time is AM, ensure end time remains in AM
         end_hour %= 12;
     }
 
-    // Adjusting for crossing over midnight
     if (end_hour < start_hour) {
         if (am_pm == "AM")
             am_pm = "PM";
@@ -239,7 +230,6 @@ void sleepMusicRoutine(const unordered_map<string, DormRecord>& dormitories) {
         for (int day = 1; day <= 7; ++day) {
             cout << "Day " << day << " in dormitory: " << dorm.dorm_name << endl;
             
-            
             vector<InmateRecord> sortedInmates = dorm.inmates;
             
             sort(sortedInmates.begin(), sortedInmates.end(), [day](const InmateRecord& a, const InmateRecord& b) {
@@ -253,18 +243,10 @@ void sleepMusicRoutine(const unordered_map<string, DormRecord>& dormitories) {
                 ss_a >> hour_a >> colon_a >> minute_a >> am_pm_a;
                 ss_b >> hour_b >> colon_b >> minute_b >> am_pm_b;
                 
-                // Convert to 24-hour format for comparison
-                if (am_pm_a == "PM" && hour_a != 12) hour_a += 12;
-                if (am_pm_b == "PM" && hour_b != 12) hour_b += 12;
-                if (am_pm_a == "AM" && hour_a == 12) hour_a = 0;
-                if (am_pm_b == "AM" && hour_b == 12) hour_b = 0;
-                
-                // Prioritize PM sleep times
                 if (am_pm_a != am_pm_b) {
                     return am_pm_a > am_pm_b;
                 }
                 
-                // Compare times
                 if (hour_a == hour_b) {
                     return minute_a < minute_b;
                 }
@@ -282,18 +264,14 @@ void sleepMusicRoutine(const unordered_map<string, DormRecord>& dormitories) {
 int main() {
     vector<InmateRecord> inmatesList;
     inputDataFromInmateFile(inmatesList, "inmates.txt");
-    displayInmates(inmatesList);
 
     unordered_map<string, DormRecord> dormitories;
     inputDataFromDormFile(dormitories, "dorm.txt");
 
-    // Distribute inmates to dormitories
     distributeInmatesToDorms(inmatesList, dormitories);
 
-    // Display dormitories
     displayDormitories(dormitories);
 
-    // Play music routine
     sleepMusicRoutine(dormitories);
 
     return 0;

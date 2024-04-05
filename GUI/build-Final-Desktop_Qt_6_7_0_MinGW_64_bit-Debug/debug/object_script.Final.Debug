@@ -1,0 +1,10 @@
+debug/fourthwindow.o
+debug/main.o
+debug/mainwindow.o
+debug/secondwindow.o
+debug/thirdwindow.o
+debug/qrc_Resources.o
+debug/moc_fourthwindow.o
+debug/moc_mainwindow.o
+debug/moc_secondwindow.o
+debug/moc_thirdwindow.o

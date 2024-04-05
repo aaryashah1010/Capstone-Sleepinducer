@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/Text">
+        <file>Text/dorm.txt</file>
+        <file>Text/inmates.txt</file>
+    </qresource>
+</RCC>

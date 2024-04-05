@@ -4,7 +4,7 @@
 #include <vector>
 #include <iomanip>
 #include <unordered_map>
-#include <algorithm> // for sorting
+#include <algorithm>
 using namespace std;
 
 class DailySleep {
@@ -18,12 +18,12 @@ public:
     string name;
     int ear_id;
     int minutes;
-    vector<DailySleep> daily_sleep; // Vector to hold daily sleep time
-    int members; // Indicates whether it's a single or double occupancy
-    string dorm_name; // Name of the dormitory
-    vector<int> music_channels; // Music channels assigned (numbers)
-    vector<string> music_per_channel; // Music per channel (numbers)
-    bool asleep; // Indicates whether the inmate is asleep
+    vector<DailySleep> daily_sleep;
+    int members;
+    string dorm_name;
+    vector<int> music_channels;
+    vector<string> music_per_channel;
+    bool asleep;
 };
 
 void displayInmates(const Inmate& inmate) {
@@ -63,7 +63,6 @@ void inputDataFromFile(vector<Inmate>& inmatesList, const string& filename) {
         stringstream ss(line);
         string token;
 
-        // Read comma-separated values from the line
         getline(ss, inmate.name, ',');
         getline(ss, token, ',');
         inmate.ear_id = stoi(token);
@@ -80,7 +79,6 @@ void inputDataFromFile(vector<Inmate>& inmatesList, const string& filename) {
 
         getline(ss, inmate.dorm_name, ',');
 
-        // Read music channels and music per channel
         while (getline(ss, token, ',')) {
             int channel = stoi(token);
             inmate.music_channels.push_back(channel);
@@ -89,7 +87,7 @@ void inputDataFromFile(vector<Inmate>& inmatesList, const string& filename) {
             inmate.music_per_channel.push_back(token);
         }
 
-        inmate.asleep = false; // Initialize as not asleep
+        inmate.asleep = false;
         inmatesList.push_back(inmate);
     }
 
@@ -98,19 +96,16 @@ void inputDataFromFile(vector<Inmate>& inmatesList, const string& filename) {
 }
 
 void assignDorm(vector<Inmate>& inmatesList, unordered_map<string, vector<Inmate>>& dormitories) {
-    // Group inmates by dormitory
     for (const auto& inmate : inmatesList) {
         dormitories[inmate.dorm_name].push_back(inmate);
     }
 
-    // Sort inmates in each dorm based on fall-asleep time (minutes)
     for (auto& dorm : dormitories) {
         sort(dorm.second.begin(), dorm.second.end(), [](const Inmate& a, const Inmate& b) {
             return a.minutes < b.minutes;
         });
     }
 
-    // Display dormitory assignments
     for (auto& dorm : dormitories) {
         cout << "Dormitory: " << dorm.first << endl;
         for (auto& inmate : dorm.second) {
@@ -123,36 +118,24 @@ void assignDorm(vector<Inmate>& inmatesList, unordered_map<string, vector<Inmate
 void activateChannels(vector<Inmate>& inmates, int max_sleep_time) {
     for (auto& inmate : inmates) {
         if (!inmate.asleep) {
-            // Activate the music channel for awake inmates
             cout << "Activating music channel for inmate " << inmate.name << " in dorm " << inmate.dorm_name << endl;
-            // Simulate activation of music channel here
         }
     }
 
-    // Simulate playing music until max_sleep_time + p minutes
     cout << "Music playing in dorm " << inmates[0].dorm_name << " for " << max_sleep_time << " minutes" << endl;
-    // Simulate playing music for max_sleep_time + p minutes here
 
-    // Deactivate channels for sleeping inmates
     for (auto& inmate : inmates) {
         if (inmate.asleep) {
-            // Deactivate the music channel for sleeping inmates
             cout << "Deactivating music channel for inmate " << inmate.name << " in dorm " << inmate.dorm_name << endl;
-            // Simulate deactivation of music channel here
-
-            // Add message for activating the music channel again after p minutes
             cout << "Activating music channel for inmate " << inmate.name << " in dorm " << inmate.dorm_name << " after "<<inmate.minutes<<" minutes"<<endl;
-            // Simulate activation of music channel here after p minutes
         }
     }
 }
 
 void simulateSleep(vector<Inmate>& inmatesList, const string& dorm_name) {
-    // Find the dormitory and its inmates
     vector<Inmate>& dorm = inmatesList;
     int max_sleep_time = 0;
 
-    // Mark the inmates as asleep and find the maximum fall-asleep time
     for (auto& inmate : dorm) {
         inmate.asleep = true;
         if (inmate.minutes > max_sleep_time) {
@@ -160,16 +143,12 @@ void simulateSleep(vector<Inmate>& inmatesList, const string& dorm_name) {
         }
     }
 
-    // Deactivate channels for sleeping inmates
     for (auto& inmate : dorm) {
         if (inmate.asleep) {
-            // Deactivate the music channel for sleeping inmates
             cout << "Deactivating music channel for inmate " << inmate.name << " in dorm " << inmate.dorm_name << endl;
-            // Simulate deactivation of music channel here
         }
     }
 
-    // Activate channels for awake inmates
     activateChannels(dorm, max_sleep_time);
 }
 
@@ -185,7 +164,6 @@ int main() {
 
     assignDorm(inmatesList, dormitories);
 
-    // Simulate sleep for each dormitory
     for (auto& dorm : dormitories) {
         simulateSleep(dorm.second, dorm.first);
     }

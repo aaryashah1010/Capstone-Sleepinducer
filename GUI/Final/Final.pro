@@ -9,6 +9,7 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    fifthwindow.cpp \
     fourthwindow.cpp \
     main.cpp \
     mainwindow.cpp \
@@ -16,12 +17,14 @@ SOURCES += \
     thirdwindow.cpp
 
 HEADERS += \
+    fifthwindow.h \
     fourthwindow.h \
     mainwindow.h \
     secondwindow.h \
     thirdwindow.h
 
 FORMS += \
+    fifthwindow.ui \
     fourthwindow.ui \
     mainwindow.ui \
     secondwindow.ui \

@@ -49,3 +49,11 @@ void SecondWindow::loadDataFromFile(const QString& fileName)
     file.close();
 }
 
+
+void SecondWindow::on_pushButton_clicked()
+{
+    hide();
+    third = new ThirdWindow(this);
+    third->show();
+}
+

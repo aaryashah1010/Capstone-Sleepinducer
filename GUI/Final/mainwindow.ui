@@ -19,7 +19,7 @@
      <rect>
       <x>710</x>
       <y>560</y>
-      <width>83</width>
+      <width>80</width>
       <height>29</height>
      </rect>
     </property>
@@ -27,30 +27,17 @@
      <string>Next</string>
     </property>
    </widget>
-   <widget class="QRadioButton" name="radioButton">
+   <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>310</x>
-      <y>200</y>
-      <width>238</width>
-      <height>26</height>
+      <x>330</x>
+      <y>250</y>
+      <width>176</width>
+      <height>20</height>
      </rect>
     </property>
     <property name="text">
-     <string>Click Here to see Inmate details</string>
-    </property>
-   </widget>
-   <widget class="QRadioButton" name="radioButton_2">
-    <property name="geometry">
-     <rect>
-      <x>310</x>
-      <y>260</y>
-      <width>240</width>
-      <height>26</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Click Here to See Dorms Details</string>
+     <string>Welcome To Sleep Inducer</string>
     </property>
    </widget>
   </widget>

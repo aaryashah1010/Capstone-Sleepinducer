@@ -11,9 +11,9 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QPushButton>
-#include <QtWidgets/QRadioButton>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -23,8 +23,7 @@ class Ui_MainWindow
 public:
     QWidget *centralwidget;
     QPushButton *pushButton;
-    QRadioButton *radioButton;
-    QRadioButton *radioButton_2;
+    QLabel *label;
 
     void setupUi(QMainWindow *MainWindow)
     {
@@ -35,13 +34,10 @@ public:
         centralwidget->setObjectName("centralwidget");
         pushButton = new QPushButton(centralwidget);
         pushButton->setObjectName("pushButton");
-        pushButton->setGeometry(QRect(710, 560, 83, 29));
-        radioButton = new QRadioButton(centralwidget);
-        radioButton->setObjectName("radioButton");
-        radioButton->setGeometry(QRect(310, 200, 238, 26));
-        radioButton_2 = new QRadioButton(centralwidget);
-        radioButton_2->setObjectName("radioButton_2");
-        radioButton_2->setGeometry(QRect(310, 260, 240, 26));
+        pushButton->setGeometry(QRect(710, 560, 80, 29));
+        label = new QLabel(centralwidget);
+        label->setObjectName("label");
+        label->setGeometry(QRect(330, 250, 176, 20));
         MainWindow->setCentralWidget(centralwidget);
 
         retranslateUi(MainWindow);
@@ -53,8 +49,7 @@ public:
     {
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "Sleep Inducer", nullptr));
         pushButton->setText(QCoreApplication::translate("MainWindow", "Next", nullptr));
-        radioButton->setText(QCoreApplication::translate("MainWindow", "Click Here to see Inmate details", nullptr));
-        radioButton_2->setText(QCoreApplication::translate("MainWindow", "Click Here to See Dorms Details", nullptr));
+        label->setText(QCoreApplication::translate("MainWindow", "Welcome To Sleep Inducer", nullptr));
     } // retranslateUi
 
 };

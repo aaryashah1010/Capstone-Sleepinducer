@@ -1,9 +1,11 @@
+release/fifthwindow.o
 release/fourthwindow.o
 release/main.o
 release/mainwindow.o
 release/secondwindow.o
 release/thirdwindow.o
 release/qrc_Resources.o
+release/moc_fifthwindow.o
 release/moc_fourthwindow.o
 release/moc_mainwindow.o
 release/moc_secondwindow.o

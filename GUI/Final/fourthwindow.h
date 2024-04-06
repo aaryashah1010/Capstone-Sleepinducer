@@ -2,6 +2,7 @@
 #define FOURTHWINDOW_H
 
 #include <QDialog>
+#include "fifthwindow.h"
 
 namespace Ui {
 class FourthWindow;
@@ -15,8 +16,12 @@ public:
     explicit FourthWindow(QWidget *parent = nullptr);
     ~FourthWindow();
 
+private slots:
+    void on_pushButton_2_clicked();
+
 private:
     Ui::FourthWindow *ui;
+    FifthWindow *fifth;
 };
 
 #endif // FOURTHWINDOW_H

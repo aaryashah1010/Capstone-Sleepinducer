@@ -13,6 +13,7 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QDialog>
 #include <QtWidgets/QHeaderView>
+#include <QtWidgets/QPushButton>
 #include <QtWidgets/QTableView>
 
 QT_BEGIN_NAMESPACE
@@ -21,15 +22,19 @@ class Ui_ThirdWindow
 {
 public:
     QTableView *tableView;
+    QPushButton *pushButton;
 
     void setupUi(QDialog *ThirdWindow)
     {
         if (ThirdWindow->objectName().isEmpty())
             ThirdWindow->setObjectName("ThirdWindow");
-        ThirdWindow->resize(621, 491);
+        ThirdWindow->resize(662, 563);
         tableView = new QTableView(ThirdWindow);
         tableView->setObjectName("tableView");
-        tableView->setGeometry(QRect(0, 0, 621, 491));
+        tableView->setGeometry(QRect(20, 20, 621, 491));
+        pushButton = new QPushButton(ThirdWindow);
+        pushButton->setObjectName("pushButton");
+        pushButton->setGeometry(QRect(560, 520, 83, 29));
 
         retranslateUi(ThirdWindow);
 
@@ -39,6 +44,7 @@ public:
     void retranslateUi(QDialog *ThirdWindow)
     {
         ThirdWindow->setWindowTitle(QCoreApplication::translate("ThirdWindow", "Dorms Details", nullptr));
+        pushButton->setText(QCoreApplication::translate("ThirdWindow", "Next", nullptr));
     } // retranslateUi
 
 };

@@ -13,6 +13,7 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QDialog>
 #include <QtWidgets/QHeaderView>
+#include <QtWidgets/QPushButton>
 #include <QtWidgets/QTableView>
 
 QT_BEGIN_NAMESPACE
@@ -21,15 +22,19 @@ class Ui_SecondWindow
 {
 public:
     QTableView *tableView;
+    QPushButton *pushButton;
 
     void setupUi(QDialog *SecondWindow)
     {
         if (SecondWindow->objectName().isEmpty())
             SecondWindow->setObjectName("SecondWindow");
-        SecondWindow->resize(1000, 480);
+        SecondWindow->resize(1042, 524);
         tableView = new QTableView(SecondWindow);
         tableView->setObjectName("tableView");
-        tableView->setGeometry(QRect(-10, 0, 1011, 481));
+        tableView->setGeometry(QRect(10, 10, 1021, 471));
+        pushButton = new QPushButton(SecondWindow);
+        pushButton->setObjectName("pushButton");
+        pushButton->setGeometry(QRect(950, 490, 83, 29));
 
         retranslateUi(SecondWindow);
 
@@ -39,6 +44,7 @@ public:
     void retranslateUi(QDialog *SecondWindow)
     {
         SecondWindow->setWindowTitle(QCoreApplication::translate("SecondWindow", "Student Details", nullptr));
+        pushButton->setText(QCoreApplication::translate("SecondWindow", "Next", nullptr));
     } // retranslateUi
 
 };

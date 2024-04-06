@@ -49,3 +49,11 @@ void ThirdWindow::loadDataFromFile(const QString& fileName)
     file.close();
 }
 
+
+void ThirdWindow::on_pushButton_clicked()
+{
+    hide();
+    fourth = new FourthWindow(this);
+    fourth->show();
+}
+

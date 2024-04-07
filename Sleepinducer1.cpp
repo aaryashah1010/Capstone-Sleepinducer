@@ -11,7 +11,7 @@ public:
     vector<int> sleep_time;
     int minutes;
 
-    // Constructor to initialize name, ear_id, minutes, and sleep_time vector
+    
     inmates(string name, int ear_id, int minutes, const vector<int>& sleep_time) : name(name), ear_id(ear_id), minutes(minutes), sleep_time(sleep_time) {
     }
 };
@@ -23,7 +23,7 @@ public:
     int music_id;
 };
 
-// Function to display inmate's data
+
 void displayInmates(const inmates& inmate) {
     cout << "Name: " << inmate.name << endl;
     cout << "Ear ID: " << inmate.ear_id << endl;

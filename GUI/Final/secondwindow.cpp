@@ -41,14 +41,15 @@ void SecondWindow::loadDataFromFile(const QString& fileName)
         QList<QStandardItem*> rowItems;
         for(const QString& field : fields)
         {
-            rowItems.append(new QStandardItem(field));
+            QStandardItem *item = new QStandardItem(field);
+            item->setTextAlignment(Qt::AlignJustify);
+            rowItems.append(item);
         }
         m_model->appendRow(rowItems);
     }
 
     file.close();
 }
-
 
 void SecondWindow::on_pushButton_clicked()
 {

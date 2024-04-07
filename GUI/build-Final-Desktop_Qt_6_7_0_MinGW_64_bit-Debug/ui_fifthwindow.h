@@ -12,24 +12,33 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QDialog>
-#include <QtWidgets/QHeaderView>
-#include <QtWidgets/QTableView>
+#include <QtWidgets/QPushButton>
 
 QT_BEGIN_NAMESPACE
 
 class Ui_FifthWindow
 {
 public:
-    QTableView *tableView;
+    QPushButton *pushButton;
 
     void setupUi(QDialog *FifthWindow)
     {
         if (FifthWindow->objectName().isEmpty())
             FifthWindow->setObjectName("FifthWindow");
-        FifthWindow->resize(555, 367);
-        tableView = new QTableView(FifthWindow);
-        tableView->setObjectName("tableView");
-        tableView->setGeometry(QRect(10, 10, 531, 341));
+        FifthWindow->resize(566, 584);
+        QSizePolicy sizePolicy(QSizePolicy::Policy::Fixed, QSizePolicy::Policy::Fixed);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(FifthWindow->sizePolicy().hasHeightForWidth());
+        FifthWindow->setSizePolicy(sizePolicy);
+        pushButton = new QPushButton(FifthWindow);
+        pushButton->setObjectName("pushButton");
+        pushButton->setGeometry(QRect(330, 540, 223, 29));
+        QSizePolicy sizePolicy1(QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Minimum);
+        sizePolicy1.setHorizontalStretch(0);
+        sizePolicy1.setVerticalStretch(0);
+        sizePolicy1.setHeightForWidth(pushButton->sizePolicy().hasHeightForWidth());
+        pushButton->setSizePolicy(sizePolicy1);
 
         retranslateUi(FifthWindow);
 
@@ -39,6 +48,7 @@ public:
     void retranslateUi(QDialog *FifthWindow)
     {
         FifthWindow->setWindowTitle(QCoreApplication::translate("FifthWindow", "Dialog", nullptr));
+        pushButton->setText(QCoreApplication::translate("FifthWindow", "Clcik Here to Check Music Status", nullptr));
     } // retranslateUi
 
 };

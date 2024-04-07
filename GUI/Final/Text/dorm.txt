@@ -1,3 +1,20 @@
-dorm_1,2,208
-dorm_2,2,204
-dorm_3,2,201
+Blue Ridge,2,208
+Sunset Heights,2,204
+Maple Grove,2,201
+Whispering Pines,2,205
+Cedar Creek,2,210
+Oak Ridge,2,203
+Meadow View,2,207
+Willow Brook,2,209
+Pinecrest Manor,2,206
+Lakeside Retreat,2,202
+Golden Hills,2,211
+Riverfront Haven,2,213
+Ivy Manor,2,215
+Mountain Vista,2,217
+Rosewood Gardens,2,219
+Serenity Springs,2,212
+Birchwood Meadows,2,214
+Emerald Terrace,2,216
+Tranquil Valley,2,218
+Whispering Oaks,2,220

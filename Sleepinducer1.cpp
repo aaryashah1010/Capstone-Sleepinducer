@@ -40,6 +40,7 @@ int main() {
     vector<int> sleep_time = {8, 7, 8, 9, 7, 6, 8};
     
     inmates i1("Aarya", 202301036, 10, sleep_time); 
+    cout<<"testing";
     displayInmates(i1);
 
     return 0;

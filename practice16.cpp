@@ -248,7 +248,7 @@ void music_playing(const Inmate_detail& inmate, int w_day) {
     }
 
     int end_h = ((start_hour * 60 )+ minute + inmate.minutes) / 60;
-    int end_minute = ((start_hour * 60) + minute + inmate.minutes) % 60;
+    int end_minute = (start_hour * 60 + minute + inmate.minutes) % 60;
 
     if (end_h >= 24) {
         end_h -= 24;

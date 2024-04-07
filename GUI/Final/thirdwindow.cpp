@@ -30,7 +30,7 @@ void ThirdWindow::loadDataFromFile(const QString& fileName)
         return;
     }
 
-    m_model->setHorizontalHeaderLabels({"Dorm Name","Number of Students","Preference 1", "Preference 2", "Preference 3", "Preference 4"});
+    m_model->setHorizontalHeaderLabels({"Dorm Name","Number of Channels","No of Songs Per Channel"});
 
     QTextStream in(&file);
     while (!in.atEnd())
@@ -41,14 +41,21 @@ void ThirdWindow::loadDataFromFile(const QString& fileName)
         QList<QStandardItem*> rowItems;
         for(const QString& field : fields)
         {
-            rowItems.append(new QStandardItem(field));
+            QStandardItem *item = new QStandardItem(field);
+            item->setTextAlignment(Qt::AlignJustify);
+            rowItems.append(item);
         }
         m_model->appendRow(rowItems);
     }
 
     file.close();
-}
 
+    ui->tableView->resizeColumnsToContents();
+
+    for (int i = 0; i < m_model->columnCount(); ++i) {
+        ui->tableView->horizontalHeader()->setSectionResizeMode(i, QHeaderView::Stretch);
+    }
+}
 
 void ThirdWindow::on_pushButton_clicked()
 {

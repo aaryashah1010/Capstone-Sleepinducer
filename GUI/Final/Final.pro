@@ -10,24 +10,38 @@ CONFIG += c++17
 
 SOURCES += \
     fifthwindow.cpp \
+    finalwindow.cpp \
     fourthwindow.cpp \
     main.cpp \
     mainwindow.cpp \
+    music.cpp \
     secondwindow.cpp \
+    seventhwindow.cpp \
+    sixthwindow.cpp \
     thirdwindow.cpp
 
 HEADERS += \
+    dorm.h \
     fifthwindow.h \
+    finalwindow.h \
     fourthwindow.h \
+    inmate.h \
     mainwindow.h \
+    music.h \
     secondwindow.h \
+    seventhwindow.h \
+    sixthwindow.h \
     thirdwindow.h
 
 FORMS += \
     fifthwindow.ui \
+    finalwindow.ui \
     fourthwindow.ui \
     mainwindow.ui \
+    music.ui \
     secondwindow.ui \
+    seventhwindow.ui \
+    sixthwindow.ui \
     thirdwindow.ui
 
 # Default rules for deployment.

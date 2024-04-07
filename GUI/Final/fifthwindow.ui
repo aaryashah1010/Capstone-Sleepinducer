@@ -17,7 +17,7 @@
    </sizepolicy>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>Assgnment Of Inmates</string>
   </property>
   <widget class="QPushButton" name="pushButton">
    <property name="geometry">
@@ -34,8 +34,13 @@
      <verstretch>0</verstretch>
     </sizepolicy>
    </property>
+   <property name="font">
+    <font>
+     <bold>true</bold>
+    </font>
+   </property>
    <property name="text">
-    <string>Clcik Here to Check Music Status</string>
+    <string>Next</string>
    </property>
   </widget>
  </widget>

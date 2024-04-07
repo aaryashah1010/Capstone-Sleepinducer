@@ -8,7 +8,7 @@
 #include <unordered_map>
 #include "inmate.h"
 #include "dorm.h"
-#include "music.h"
+#include "finalwindow.h"
 
 namespace Ui {
 class FifthWindow;
@@ -31,7 +31,7 @@ private:
     void displayDormitories(const std::unordered_map<QString, Dorm_detail>& big_rooms);
 
     Ui::FifthWindow *ui;
-    music *next;
+    FinalWindow *final;
     QListView *listView;
     QStringListModel *model;
 };

@@ -10,7 +10,7 @@
 FifthWindow::FifthWindow(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::FifthWindow),
-    next(nullptr)
+    final(nullptr)
 {
     ui->setupUi(this);
 
@@ -25,7 +25,8 @@ FifthWindow::FifthWindow(QWidget *parent) :
     QVBoxLayout *layout = new QVBoxLayout(this);
     layout->addWidget(listView);
 
-    QPushButton *pushButton = new QPushButton("Click Here to Check for Sleep Time", this);
+    QPushButton *pushButton = new QPushButton("Next", this);
+
     layout->addWidget(pushButton);
 
     setLayout(layout);
@@ -39,7 +40,7 @@ FifthWindow::FifthWindow(QWidget *parent) :
 FifthWindow::~FifthWindow()
 {
     delete ui;
-    delete next;
+    delete final;
 }
 
 void FifthWindow::loadData()
@@ -148,6 +149,6 @@ void FifthWindow::displayDormitories(const std::unordered_map<QString, Dorm_deta
 void FifthWindow::on_pushButton_clicked()
 {
     hide();
-    next = new music(this);
-    next->show();
+    final = new FinalWindow(this);
+    final->show();
 }

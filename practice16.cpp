@@ -247,7 +247,7 @@ void music_playing(const Inmate_detail& inmate, int w_day) {
         start_hour += 12;
     }
 
-    int end_h = ((start_hour * 60 )+ minute + inmate.minutes) / 60;
+    int end_h = (start_hour * 60 + minute + inmate.minutes) / 60;
     int end_minute = (start_hour * 60 + minute + inmate.minutes) % 60;
 
     if (end_h >= 24) {
@@ -266,6 +266,9 @@ void music_playing(const Inmate_detail& inmate, int w_day) {
 		   end_h=end_h+0;
 	   }
 	}
+    else{
+        end_h=end_h % 12;
+    }
 
     if (end_h < start_hour) {
         if (a_p == "AM")
@@ -410,15 +413,9 @@ int main() {
     displayInmates(inmate_list);
 
     unordered_map<string, Dorm_detail> big_rooms;
-    readDormFile(big_rooms, "dorm.txt");
-
-    // Distribute inmates to dorms
-    distributeInmatesToDorms(inmate_list, big_rooms);
-
-    // Display dorms
+    readDormFile(big_rooms, "dorm.txt"); 
+    distributeInmatesToDorms(inmate_list, big_rooms);    
     displayDormitories(big_rooms);
-
-    // Play music routine
     sleepMusicRoutine(big_rooms);
 
     int n;

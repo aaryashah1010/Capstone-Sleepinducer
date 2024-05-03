@@ -26,6 +26,6 @@ Some Important Links for this project is listed below **listed below**.
 ## Members
 
 * **Aarya Shah** - *Sec A* - [Aarya Shah](https://github.com/aaryashah1010/) - *Coding and Documentation*
-* **Dhruvil Patel** - *Sec A* - [Dhruvil Patel](https://github.com/Dhruvil05Patel/) - *GUI Development*
+* **Dhruvil Patel** - *Sec A* - [Dhruvil Patel](https://github.com/Dhruvil05Patel/) - *GUI Development and PPT*
 * **Kavy Sanghani** - *Sec A* - [Kavy Sanghani](https://github.com/KavySanghani/) - *Latex  Template and documentation*
-* **Siddarthsinh Vala** - *Sec A* - [Siddarthsinh Vala](https://github.com/siddharthvala)
+* **Siddarthsinh Vala** - *Sec A* - [Siddarthsinh Vala](https://github.com/siddharthvala) - *Source Collection and PPT Editing*
